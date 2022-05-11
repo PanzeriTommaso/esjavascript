@@ -9,7 +9,7 @@
     <h1 style="color:green cherteruse ">JSES3</h1>
     <h2 >Jquerie calculator</h2> 
     <div>
-        <table style="border:1px solid black">
+        <table style="border:1px solid black"; id="table">
             <th>ID</th>
             <th>N1</th>
             <th>SIGN</th>
@@ -34,12 +34,20 @@
 </br></br>
         <input type="number" id="N1" placeholder="first number" /> </br></br>
         <input type="number" id="N2" placeholder="second number" /> </br></br>
-        <button id="+">+</button>
-        <button id="-">-</button>
-        <button id="*">*</button>
-        <button id="/">/</button>
+        <button id="btn1">+</button>
+        <button id="btn2">-</button>
+        <button id="btn3">*</button>
+        <button id="btn4">/</button>
     <script>
-      
-    </script>
+        var count=3;
+        $("#btn1").click(function(){
+            var n1= +$("#N1").val();
+            var n2= +$("#N2").val();
+            var res=n1+n2;
+            console.log (res);
+            $("#table").append("<tr><td>"+count+"</td><td>"+n1+"</td><td>+</td><td>"+n2+"</td><td>"+(n1 + n2)+"</td></tr>");
+            count ++;
+        });
+        </script>
   </body>
 </html>
